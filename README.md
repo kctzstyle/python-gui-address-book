@@ -1,2 +1,2 @@
-# python-gui-address-book
- Python GUI Address Book (Python Tutorial)
+# python-sqlalchemy-tutorial
+Python SQLAlchemy Tutorial
