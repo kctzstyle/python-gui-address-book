@@ -1,12 +1,11 @@
 
 from sqlalchemy import create_engine
-from sqlalchemy import Column, Integer, String, Sequence
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, Sequence
 
 
-engine = create_engine('sqlite:///:memory:', echo=True)
+Engine = create_engine('sqlite:///addressbook.db', echo=True)
 Base = declarative_base()
-Base.metadata.create_all(engine)
 
 
 class AddressBook(Base):
@@ -27,4 +26,5 @@ class AddressBook(Base):
 
     def __repr__(self):
         return f"AddressBook({(self.name, self.address, self.phone_number, self.email)})"
-    
+
+Base.metadata.create_all(Engine)
